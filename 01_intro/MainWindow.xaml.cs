@@ -20,6 +20,7 @@ namespace _01_intro
     /// </summary>
     public partial class MainWindow : Window
     {
+        string current = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +35,14 @@ namespace _01_intro
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Your text: " + myTxtBox.Text);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string text = (sender as Button).Content.ToString();
+            current += text;
+
+            MessageBox.Show($"Button: {current} was clicked!");
         }
     }
 }

@@ -24,9 +24,9 @@
                 Width="70" Height="70">
             <Slider Width="40"></Slider>
         </Button>
-        <Button Grid.Column="1" Grid.Row="0" Margin="4">Say Hi</Button>
+        <Button Grid.Column="1" Grid.Row="0" Margin="4" Click="Button_Click_2">Say Hi</Button>
         <Button Grid.Column="2" Grid.Row="0" Margin="4" Click="Button_Click_1">Show Text!</Button>
-        <Button Grid.Column="3" Grid.Row="0" Margin="4">Say Great!</Button>
+        <Button Grid.Column="3" Grid.Row="0" Margin="4" Click="Button_Click_2">Say Great!</Button>
 
         <Button Grid.Column="0" Grid.Row="1" Background="Azure" Grid.ColumnSpan="4" FontSize="32" Click="Button_Click" >Push Wide Button</Button>
 
