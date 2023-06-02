@@ -1,0 +1,40 @@
+﻿<Window x:Class="_02_base_controls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_base_controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="349.64" Width="506.475" ToolTip="Push me">
+    <UniformGrid Columns="3" Rows="4">
+        <Button Click="Button_Click" Width="100" Height="50" BorderThickness="1,5,1,1" ClickMode="Hover">Hover Button</Button>
+        <Button Click="Button_Click" Width="100" Height="50" BorderThickness="1,5,1,1" ClickMode="Press" IsDefault="True">Press Button</Button>
+        <Button Click="Button_Click" Width="100" Height="50" BorderThickness="1,5,1,1" ClickMode="Release" IsCancel="True">Release Button</Button>
+
+        <CheckBox>Choose 1</CheckBox>
+        <CheckBox IsChecked="True">Choose 1</CheckBox>
+        <CheckBox IsChecked="{x:Null}" IsThreeState="True">Choose 1</CheckBox>
+
+        <StackPanel>
+            <RadioButton GroupName="group1">Red (1)</RadioButton>
+            <RadioButton>Red (2)</RadioButton>
+            <RadioButton>Green (2)</RadioButton>
+        </StackPanel>
+        <StackPanel>
+            <RadioButton GroupName="group1">Green (1)</RadioButton>
+            <RadioButton>Red (3)</RadioButton>
+            <RadioButton>Green (3)</RadioButton>
+        </StackPanel>
+        <StackPanel>
+            <RadioButton GroupName="group1">Blue (1)</RadioButton>
+            <RadioButton>Red (4)</RadioButton>
+            <RadioButton>Green (4)</RadioButton>
+        </StackPanel>
+
+        <RepeatButton Click="RepeatButton_Click" Delay="2000" Interval="100" Width="100" Height="50">Push me</RepeatButton>
+
+        <TextBox Text="Coming soon..." Name="txtBox" Margin="5,0" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+
+        <PasswordBox Margin="5,0" VerticalAlignment="Center"></PasswordBox>
+    </UniformGrid>
+</Window>
