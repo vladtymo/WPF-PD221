@@ -38,13 +38,6 @@
             </Grid>
         </StackPanel>
 
-        <StatusBar DockPanel.Dock="Bottom" Background="#FF007ACC">
-            <StatusBarItem HorizontalContentAlignment="Stretch">
-                <DockPanel LastChildFill="False">
-                    <Label DockPanel.Dock="Left" Padding="0" Foreground="White">Status: Normal</Label>
-                    <Label DockPanel.Dock="Right" Padding="0" Foreground="White">Time: 33s</Label>
-                </DockPanel>
-            </StatusBarItem>
-        </StatusBar>
+        
     </DockPanel>
 </Window>

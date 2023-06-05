@@ -1,0 +1,97 @@
+﻿<Window x:Class="_05_menu_bars.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_05_menu_bars"
+        mc:Ignorable="d"
+        Height="200" Title="MainWindow" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" IsMainMenu="True">
+            <MenuItem Header="_File">
+                <MenuItem Header="New">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\icons8-add-file-48.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Project..." InputGestureText="Ctrl+Shift+N"/>
+                    <MenuItem Header="File..." InputGestureText="Ctrl+N"/>
+                </MenuItem>
+                <MenuItem Header="Start Page"/>
+                <Separator/>
+                <MenuItem Header="Add">
+                    <MenuItem Header="New Project..."/>
+                    <MenuItem Header="Existing Project..."/>
+                </MenuItem>
+                <MenuItem Header="Exit" InputGestureText="Alt+F4" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Window">
+                <MenuItem Header="1 MainWindow.xaml" IsCheckable="True" IsChecked="True"/>
+                <MenuItem Header="2 MainWindow.xaml.cs" IsCheckable="True"/>
+                <MenuItem Header="3 App.xaml" IsChecked="True"/>
+                <MenuItem Header="4 App.xaml.cs" IsCheckable="True"/>
+                <Slider HorizontalAlignment="Stretch" Width="130"></Slider>
+                <RadioButton>Type 1</RadioButton>
+                <RadioButton>Type 2</RadioButton>
+            </MenuItem>
+            <MenuItem Header="Help">
+            </MenuItem>
+        </Menu>
+
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar Band="1" BandIndex="1">
+                <CheckBox ToolBar.OverflowMode="Always" Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" Width="Auto" Padding="2,0,0,0" Content="Check Me" />
+                <Button ToolBar.OverflowMode="AsNeeded" Height="30">
+                    <Image Source="Resources\Save.png"/>
+                </Button>
+                <Button ToolBar.OverflowMode="Never" Height="30">
+                    <Image Source="Resources\Print.png"/>
+                </Button>
+            </ToolBar>
+            <ToolBar Band="1" BandIndex="2">
+                <Button Height="30">
+                    <Image Source="Resources\Cut.png"/>
+                </Button>
+                <Button Height="30">
+                    <Image Source="Resources\Copy.png"/>
+                </Button>
+                <Button Height="30">
+                    <Image Source="Resources\Paste.png"/>
+                </Button>
+            </ToolBar>
+            <ToolBar Band="2" BandIndex="1">
+                <Button Height="30">
+                    <Image Source="Resources\Italic.png"/>
+                </Button>
+                <Button Height="30">
+                    <Image Source="Resources\Underline.png"/>
+                </Button>
+                <Button Height="30">
+                    <Image Source="Resources\Bold.png"/>
+                </Button>
+            </ToolBar>
+            <ToolBar Band="2" BandIndex="2">
+                <Button Height="30">
+                    <Image Source="Resources\AlignLeft.png"/>
+                </Button>
+                <Button Height="30">
+                    <Image Source="Resources\AlignCenter.png"/>
+                </Button>
+                <Button Height="30">
+                    <Image Source="Resources\AlignRight.png"/>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <StatusBar DockPanel.Dock="Bottom" Background="#FF007ACC">
+            <StatusBarItem HorizontalContentAlignment="Stretch">
+                <DockPanel LastChildFill="False">
+                    <Label DockPanel.Dock="Left" Padding="0" Foreground="White">Status: Normal</Label>
+                    <Label DockPanel.Dock="Right" Padding="0" Foreground="White">Time: 33s</Label>
+                </DockPanel>
+            </StatusBarItem>
+        </StatusBar>
+
+        <TextBox Margin="5"></TextBox>
+    </DockPanel>
+</Window>
