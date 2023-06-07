@@ -8,7 +8,6 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -33,31 +32,6 @@ namespace _07_bindings
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(viewModel.CurrentUser.ToString());
-        }
-    }
-
-    public class ViewModel
-    {
-        public User CurrentUser { get; set; }
-        public string Title { get; set; }
-        public Color Color { get; set; }
-
-        public ViewModel(string title)
-        {
-            CurrentUser = new() { Username = "tymo@gmail.com", Score = 33 };
-            this.Title = title;
-            Color = Colors.DarkGray;
-        }
-    }
-
-    public class User
-    {
-        public string Username { get; set; }
-        public int Score { get; set; }
-
-        public override string ToString()
-        {
-            return $"User {Username} has socre of {Score}";
         }
     }
 }

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        d:DataContext="{d:DesignInstance Type=local:ViewModel}"
         xmlns:local="clr-namespace:_07_bindings"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="376">
@@ -39,8 +40,10 @@
         </DockPanel>
         <DockPanel>
             <Label DockPanel.Dock="Left">User Score:</Label>
-            <TextBox Text="{Binding CurrentUser.Score}" Margin="5" MinWidth="200"></TextBox>
+            <TextBox Text="{Binding Path=CurrentUser.Score}" Margin="5" MinWidth="200"></TextBox>
         </DockPanel>
         <Button Click="Button_Click" Margin="5">Show User</Button>
+        
+        <CheckBox IsChecked="{Binding IsDarkTheme}" Margin="5">Dark Theme</CheckBox>
     </StackPanel>
 </Window>
