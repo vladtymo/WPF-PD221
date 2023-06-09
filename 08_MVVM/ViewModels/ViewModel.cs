@@ -27,7 +27,8 @@ namespace _08_MVVM.ViewModels
         public void Dublicate()
         {
             if (SelectedContact != null)
-                contacts.Add(SelectedContact);
+                // TODO: make deep copy
+                contacts.Add(SelectedContact); 
         }
         public void Delete()
         {
