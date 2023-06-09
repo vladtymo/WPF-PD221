@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_range_controls", "04_ran
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_media_element", "06_media_element\06_media_element.csproj", "{D6CFC595-4820-4FFE-8333-9884A21F5F15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_bindings", "07_bindings\07_bindings.csproj", "{BC1BFE37-297D-4620-9CCE-CF72441E5C3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_bindings", "07_bindings\07_bindings.csproj", "{BC1BFE37-297D-4620-9CCE-CF72441E5C3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_MVVM", "08_MVVM\08_MVVM.csproj", "{9EA18CE5-2C87-4211-B814-193105ED85D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{BC1BFE37-297D-4620-9CCE-CF72441E5C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC1BFE37-297D-4620-9CCE-CF72441E5C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC1BFE37-297D-4620-9CCE-CF72441E5C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA18CE5-2C87-4211-B814-193105ED85D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA18CE5-2C87-4211-B814-193105ED85D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA18CE5-2C87-4211-B814-193105ED85D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA18CE5-2C87-4211-B814-193105ED85D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

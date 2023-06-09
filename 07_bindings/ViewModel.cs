@@ -5,6 +5,8 @@ using System.Windows.Media;
 
 namespace _07_bindings
 {
+    // ------------------------------------- implement INotifyPropertyChanged manualy
+
     //public class ViewModel : INotifyPropertyChanged
     //{
     //    private bool isDarkTheme;
@@ -40,7 +42,8 @@ namespace _07_bindings
     //    public event PropertyChangedEventHandler? PropertyChanged;
     //}
 
-    // using Fody Package
+    // ------------------------------------- using Attributes by Fody 
+
     [AddINotifyPropertyChangedInterface]
     public class ViewModel
     {
