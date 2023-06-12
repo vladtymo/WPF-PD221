@@ -21,23 +21,13 @@ namespace _08_MVVM
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ViewModel viewModel = new ViewModel();
+        //private ViewModel viewModel = new ViewModel();
         public MainWindow()
         {
             InitializeComponent();
 
-            this.DataContext = viewModel;
+            //this.DataContext = viewModel;
             // or set in XAML
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            viewModel.Dublicate();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            viewModel.Delete();
         }
     }
 }

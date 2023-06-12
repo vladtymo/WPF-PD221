@@ -9,39 +9,51 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <!-- Set ViewModel instance to DataContext -->
-    <!--<Window.DataContext>
+    <Window.DataContext>
         <vms:ViewModel/>
-    </Window.DataContext>-->
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="100" Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition MinWidth="100" Width="*"/>
-        </Grid.ColumnDefinitions>
-        <ListBox Name="contactListBox" HorizontalContentAlignment="Stretch"
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="D" Command="{Binding DublicateCmd}"></KeyBinding>
+        <KeyBinding Modifiers="Ctrl" Key="Delete" Command="{Binding RemoveCmd}"></KeyBinding>
+    </Window.InputBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Command="{Binding DublicateCmd}" Header="Dublicate"></MenuItem>
+            <MenuItem Command="{Binding RemoveCmd}" Header="Remove"></MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="100" Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition MinWidth="100" Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox Name="contactListBox" HorizontalContentAlignment="Stretch"
                  Grid.Column="0" Background="#FF92CEE9"
                  ItemsSource="{Binding Path=Contacts}"
                  SelectedItem="{Binding SelectedContact, Mode=OneWayToSource}"
                  DisplayMemberPath="ShortInfo">
-        </ListBox>
+            </ListBox>
 
-        <GridSplitter HorizontalAlignment="Stretch"
+            <GridSplitter HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch"
                       Width="6" Grid.Column="1"></GridSplitter>
 
-        <StackPanel Grid.Column="2" Background="#FF4F7694">
-            <Label HorizontalAlignment="Center">Name</Label>
-            <TextBox Text="{Binding SelectedContact.Name}" Margin="20,0"></TextBox>
-            <Label HorizontalAlignment="Center">Surname</Label>
-            <TextBox Text="{Binding SelectedContact.Surname}" Margin="20,0"></TextBox>
-            <Label HorizontalAlignment="Center">Age</Label>
-            <TextBox Text="{Binding SelectedContact.Age}" Margin="20,0"></TextBox>
-            <Label HorizontalAlignment="Center">Phone</Label>
-            <TextBox Text="{Binding SelectedContact.Phone}" Margin="20,0"></TextBox>
-            <CheckBox IsChecked="{Binding SelectedContact.IsBlocked}" Margin="20,20,20,0">Blocked</CheckBox>
-            <Button Click="Button_Click" Background="#FF7EC97E" Margin="20,20,20,5">Create Contact Copy</Button>
-            <Button Click="Button_Click_1" Background="PaleVioletRed" Margin="20,0">Delete Selected Contact</Button>
+            <StackPanel Grid.Column="2" Background="#FF4F7694">
+                <Label HorizontalAlignment="Center">Name</Label>
+                <TextBox Text="{Binding SelectedContact.Name}" Margin="20,0"></TextBox>
+                <Label HorizontalAlignment="Center">Surname</Label>
+                <TextBox Text="{Binding SelectedContact.Surname}" Margin="20,0"></TextBox>
+                <Label HorizontalAlignment="Center">Age</Label>
+                <TextBox Text="{Binding SelectedContact.Age}" Margin="20,0"></TextBox>
+                <Label HorizontalAlignment="Center">Phone</Label>
+                <TextBox Text="{Binding SelectedContact.Phone}" Margin="20,0"></TextBox>
+                <CheckBox IsChecked="{Binding SelectedContact.IsBlocked}" Margin="20,20,20,0">Blocked</CheckBox>
+                <Button Command="{Binding DublicateCmd}" Background="#FF7EC97E" Margin="20,20,20,5">Create Contact Copy</Button>
+                <Button Command="{Binding RemoveCmd}" Background="PaleVioletRed" Margin="20,0">Delete Selected Contact</Button>
+                <Button Command="{Binding RemoveAllCmd}" Background="MediumVioletRed" Margin="20,0">Delete All</Button>
 
-        </StackPanel>
-    </Grid>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+   
 </Window>
