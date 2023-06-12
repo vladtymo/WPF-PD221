@@ -21,7 +21,7 @@ namespace _08_MVVM
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private ViewModel viewModel = new ViewModel();
+        //  private ViewModel viewModel = new ViewModel();
         public MainWindow()
         {
             InitializeComponent();

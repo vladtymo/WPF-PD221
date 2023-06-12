@@ -30,8 +30,27 @@
             <ListBox Name="contactListBox" HorizontalContentAlignment="Stretch"
                  Grid.Column="0" Background="#FF92CEE9"
                  ItemsSource="{Binding Path=Contacts}"
-                 SelectedItem="{Binding SelectedContact, Mode=OneWayToSource}"
-                 DisplayMemberPath="ShortInfo">
+                 SelectedItem="{Binding SelectedContact, Mode=OneWayToSource}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Margin="0,0,10,0" Grid.RowSpan="2" Height="45" Width="45" Background="DarkCyan" CornerRadius="50"></Border>
+                            <TextBlock FontWeight="Bold" FontSize="18" VerticalAlignment="Center" Grid.Column="1">
+                                <Run Text="{Binding Name}"/>
+                                <Run Text="{Binding Surname}"/>
+                            </TextBlock>
+                            <TextBlock Text="{Binding Phone}" Grid.Column="1" Grid.Row="1"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
 
             <GridSplitter HorizontalAlignment="Stretch"
@@ -55,5 +74,5 @@
             </StackPanel>
         </Grid>
     </DockPanel>
-   
+
 </Window>
