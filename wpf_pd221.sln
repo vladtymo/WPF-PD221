@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_media_element", "06_medi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_bindings", "07_bindings\07_bindings.csproj", "{BC1BFE37-297D-4620-9CCE-CF72441E5C3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_MVVM", "08_MVVM\08_MVVM.csproj", "{9EA18CE5-2C87-4211-B814-193105ED85D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_MVVM", "08_MVVM\08_MVVM.csproj", "{9EA18CE5-2C87-4211-B814-193105ED85D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_shulte_table", "09_shulte_table\09_shulte_table.csproj", "{C5F2ACBE-C769-46A6-B66A-E1AA20596992}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{9EA18CE5-2C87-4211-B814-193105ED85D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EA18CE5-2C87-4211-B814-193105ED85D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EA18CE5-2C87-4211-B814-193105ED85D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F2ACBE-C769-46A6-B66A-E1AA20596992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F2ACBE-C769-46A6-B66A-E1AA20596992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F2ACBE-C769-46A6-B66A-E1AA20596992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F2ACBE-C769-46A6-B66A-E1AA20596992}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

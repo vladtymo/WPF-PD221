@@ -1,0 +1,141 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vms="clr-namespace:_09_shulte_table.ViewModels">
+    
+    <Style x:Key="OuterBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="#FFDDD3E7"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="BorderThickness" Value="0,0,0,12"/>
+        <Setter Property="BorderBrush" Value="#FF5A218F"/>
+    </Style>
+    <Style x:Key="InnerBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="#FF50306E"/>
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="CornerRadius" Value="6.5"/>
+        <Setter Property="BorderThickness" Value="0,7,0,0"/>
+        <Setter Property="BorderBrush" Value="#FF321E45"/>
+    </Style>
+
+    <Style x:Key="TableCell" TargetType="{x:Type Button}">
+        <!--<Setter Property="Command" Value="{Binding ClickCommand}"></Setter>-->
+        <Setter Property="Content" Value="{Binding Number}"></Setter>
+        <Setter Property="Margin" Value="0.6"></Setter>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TranslateTransform X="0" Y="0"/>
+            </Setter.Value>
+        </Setter>
+        <!--Background-->
+        <Setter Property="BorderThickness" Value="0,0,0,4"></Setter>
+        <Setter Property="BorderBrush" Value="#FFB8B8B8"></Setter>
+        <Setter Property="Background" Value="#FFF6F6F6"></Setter>
+        <!--Text Properties-->
+        <Setter Property="FontSize" Value="24"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="Foreground" Value="#FF4A464D"></Setter>
+        <!--Control Template-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="3">
+                        <ContentPresenter Margin="{TemplateBinding Padding}"
+                                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                              Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--Triggers-->
+        <Style.Triggers>
+            <!--Shake Animation-->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsWrong}" Value="True"/>
+                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="True"/>
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.EnterActions>
+                    <BeginStoryboard x:Name="BeginStoryboardName">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames
+                                                        Storyboard.TargetProperty="RenderTransform.X"
+                                                        Duration="0:0:0:0.12"
+                                                        RepeatBehavior="2x">
+                                <LinearDoubleKeyFrame Value="3" KeyTime="0:0:0:0.03"/>
+                                <LinearDoubleKeyFrame Value="-3" KeyTime="0:0:0:0.09" />
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0:0.12" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiDataTrigger.EnterActions>
+            </MultiDataTrigger>
+            
+            <!--Press Animation-->
+            <!--<MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsNext}" Value="True"/>
+                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="True"/>
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation To="0,5,0,0"
+                                                    Storyboard.TargetProperty="BorderThickness"
+                                                    Duration="0:0:0.1"/>
+                            <ColorAnimation To="#FF694887"
+                                                    Storyboard.TargetProperty="Background.Color"
+                                                    Duration="0:0:0.1"/>
+                            <ColorAnimation To="#FF593D74"
+                                                    Storyboard.TargetProperty="BorderBrush.Color"
+                                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiDataTrigger.EnterActions>
+            </MultiDataTrigger>-->
+            
+            <!--Active Cell Trigger-->
+            <!--<DataTrigger Binding="{Binding IsNext}" Value="True">
+                <Setter Property="FontWeight" Value="UltraBold"></Setter>
+            </DataTrigger>-->
+            
+            <!--Set Eye-->
+            <DataTrigger Binding="{Binding Number}" Value="{x:Static vms:TableVM.EYE_NUMBER}">
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <Image Source="/Resources/eye.png" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+
+            <!--Set Color Style-->
+            <DataTrigger Binding="{Binding Color, Mode=OneTime}" Value="{x:Static vms:CellColor.Red}">
+                <Setter Property="Background" Value="#FFE2526E"></Setter>
+                <Setter Property="BorderBrush" Value="#FFA93D52"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Color, Mode=OneTime}" Value="{x:Static vms:CellColor.Yellow}">
+                <Setter Property="Background" Value="#FFEEC13A"></Setter>
+                <Setter Property="BorderBrush" Value="#FFA08120"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Color, Mode=OneTime}" Value="{x:Static vms:CellColor.Green}">
+                <Setter Property="Background" Value="#FF9CDB52"></Setter>
+                <Setter Property="BorderBrush" Value="#FF6F9E37"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Color, Mode=OneTime}" Value="{x:Static vms:CellColor.Blue}">
+                <Setter Property="Background" Value="#FF699CD3"></Setter>
+                <Setter Property="BorderBrush" Value="#FF4E76A0"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Color, Mode=OneTime}" Value="{x:Static vms:CellColor.White}">
+                <Setter Property="Background" Value="#FFF6F6F6"></Setter>
+                <Setter Property="BorderBrush" Value="#FFB8B8B8"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Color, Mode=OneTime}" Value="{x:Static vms:CellColor.Purple}">
+                <Setter Property="Background" Value="#FFB478EE"></Setter>
+                <Setter Property="BorderBrush" Value="#FF7C53A3"></Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
